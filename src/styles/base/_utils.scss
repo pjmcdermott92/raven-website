@@ -1,0 +1,24 @@
+@use 'variables' as *;
+
+@mixin container {
+    width: 100%;
+    max-width: #{$content-wide-width};
+    margin-inline: auto;
+    padding: 0 0.25rem;
+}
+
+@mixin borderTopBottom($color: var(--color-brand-primary)) {
+    border-top: 4px solid $color;
+    border-bottom: 4px solid $color;
+}
+
+.container {
+    @include container();
+}
+
+.visually-hidden {
+    visibility: hidden;
+    position: absolute;
+    top: -100%;
+    left: -100%;
+}

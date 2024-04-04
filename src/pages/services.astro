@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeading from '../components/PageHeading.astro';
+import Section from '../components/Section.astro';
+import ServicesGrid from '../components/ServicesGrid.astro';
+import Testimonials from '../components/Testimonials.astro';
+import CtaSection from '../components/CtaSection.astro';
+---
+
+<BaseLayout>
+    <PageHeading heading='Our Services' />
+    <Section>
+        <div class='container'>
+            <p class='fs-medium'>
+                Raven heating & Cooling is a full-service HVAC repair and maintenance company. We offer solutions for all of your heating
+                and cooling needs.
+            </p>
+            <ServicesGrid />
+        </div>
+    </Section>
+    <CtaSection />
+    <Testimonials title='Client Testimonials' />
+</BaseLayout>

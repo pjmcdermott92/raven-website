@@ -1,0 +1,63 @@
+@use '../base/utils' as *;
+@use '../base/queries' as *;
+
+// Services Grid Section
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-inline: auto;
+    padding: 3rem 0;
+
+    &__grid-item {
+        display: flex;
+        align-items: start;
+        gap: 1rem;
+    }
+
+    &__content p {
+        font-size: var(--fs-small);
+    }
+
+    @include breakpoint-sm {
+        grid-template-columns: 1fr;
+    }
+}
+
+.expert-accent {
+    margin: 0;
+    margin-top: -1.75rem;
+    margin-bottom: 1.25rem;
+    padding: 0 0.75rem;
+    color: var(--color-brand-primary);
+    font: {
+        size: var(--fs-extra-medium);
+        font-weight: 600;
+        style: italic;
+    }
+}
+
+.image-offset {
+    position: relative;
+    width: 100%;
+    padding-bottom: 0.75rem;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: -1rem;
+        width: 100%;
+        height: 90%;
+        border: 3px solid var(--color-brand-primary);
+        z-index: 1;
+    }
+
+    img {
+        position: relative;
+        width: 100%;
+        margin: 0 0 1.5rem -1.5rem;
+        box-shadow: -2px -2px 8px 1px rgba(0, 0, 0, 0.45);
+        z-index: 2;
+    }
+}

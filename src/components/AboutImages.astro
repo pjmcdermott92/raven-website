@@ -1,0 +1,14 @@
+---
+import { Image } from 'astro:assets';
+import ravenFamily from '../images/raven-family.webp';
+import matthew from '../images/matt.webp';
+---
+
+<div class='about-img-wrapper'>
+    <div class='about-img-wrapper__img'>
+        <Image src={ravenFamily} alt='The Raven Family' loading='eager' decoding='async' />
+    </div>
+    <div class='about-img-wrapper__img'>
+        <Image src={matthew} alt='Owner Matthew Uselton' loading='eager' decoding='async' />
+    </div>
+</div>

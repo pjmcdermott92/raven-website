@@ -1,0 +1,15 @@
+---
+import { getCollection } from 'astro:content';
+import ServiceCard from './ServiceCard.astro';
+
+export interface Props {
+    lazy?: boolean;
+}
+
+const { lazy = false } = Astro.props;
+const services = await getCollection('service');
+---
+
+<div class='services-grid'>
+    {services && services.map((service: any) => <ServiceCard service={service} lazy={lazy} />)}
+</div>

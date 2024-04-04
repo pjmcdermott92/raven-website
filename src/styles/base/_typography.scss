@@ -1,0 +1,63 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bold;
+    line-height: 1.07;
+    margin-bottom: 0.95rem;
+}
+h1 {
+    font-size: var(fs-huge);
+}
+h2 {
+    font-size: var(fs-larger);
+}
+h3 {
+    font-size: var(fs-large);
+}
+h4 {
+    font-size: var(fs-extra-medium);
+}
+h5,
+h6 {
+    font-size: var(fs-medium);
+}
+
+p {
+    margin-bottom: 1.25rem;
+    line-height: 1.67;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.fs-small {
+    font-size: var(--fs-small);
+}
+.fs-regular {
+    font-size: var(--fs-regular);
+}
+.fs-extra-regular {
+    font-size: var(--fs-extra-regular);
+}
+.fs-medium {
+    font-size: var(--fs-medium);
+}
+.fs-extra-medium {
+    font-size: var(--fs-extra-medium);
+}
+.fs-large {
+    font-size: var(--fs-large);
+}
+.fs-larger {
+    font-size: var(--fs-larger);
+}
+.fs-huge {
+    font-size: var(--fs-huge);
+}
+.fs-large-huge {
+    font-size: var(--fs-large-huge);
+}

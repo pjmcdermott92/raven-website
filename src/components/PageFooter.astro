@@ -1,0 +1,59 @@
+---
+import Button, { BUTTON_VARIANTS } from './Button.astro';
+import { NAV_LINKS, ROC_NUMBER } from '../config';
+
+const currentYear = new Date(Date.now()).getFullYear();
+---
+
+<footer class='page-footer'>
+    <div class='page-footer__container'>
+        <div>
+            <h5 class='fs-extra-regular'>Raven Heating & Cooling, LLC</h5>
+            <p class='fs-small'>
+                We are a local, family-owned business in Tucson, Arizona. The owner, Matthew Uselton, has been repairing HVAC systems since
+                2000.
+            </p>
+            <br />
+            <p>
+                <Button isLink href='/contact' variant={BUTTON_VARIANTS.SECONDARY} text='Contact Us' />
+            </p>
+        </div>
+        <div>
+            <h5 class='fs-extra-regular'>Quick Links</h5>
+            <ul class='page-footer__nav'>
+                {
+                    NAV_LINKS.map(({ href, label }) => (
+                        <li>
+                            <a href={href}>{label}</a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+        <div>
+            <h5 class='fs-extra-regular'>Services</h5>
+            <ul class='page-footer__nav'>
+                <li>HVAC Maintenance</li>
+                <li>HVAC Repair</li>
+                <li>System Replacement</li>
+                <li>Duct Cleaning</li>
+                <li>Thermostats</li>
+            </ul>
+        </div>
+        <div>
+            <h5 class='fs-extra-regular'>Contact Us</h5>
+            <p>Raven Heating & Cooling <br />Tucson, AZ</p>
+            <br />
+            <p><a href='tel:5202448627'>(520) 244-8627</a></p>
+            <p><a href='mailto:comfort@ravenac.com'>comfort@ravenac.com</a></p>
+        </div>
+    </div>
+    <div class='page-footer__bottom'>
+        <p><strong>ROC #: {ROC_NUMBER}</strong></p>
+        <p>&copy;{currentYear} Raven Heating & Cooling, LLC</p>
+        <p>
+            Website design and development by
+            <a href='https://www.pmcwebsolutions.com/' target='_blank' rel='noreferrer noopener'>PMC Solutions</a>.
+        </p>
+    </div>
+</footer>

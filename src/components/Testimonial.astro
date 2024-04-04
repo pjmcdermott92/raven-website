@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+
+import fiveStars from '../images/five-stars.webp';
+
+export interface Props {
+    testimonial?: any;
+    isShort?: boolean;
+}
+
+const { testimonial, isShort = false } = Astro.props;
+const {
+    data: { name, shortQuote },
+} = testimonial;
+const { Content } = await testimonial.render();
+---
+
+<div class='testimonials__testimony-wrapper'>
+    <p><strong>{name}</strong></p>
+    <Image src={fiveStars} alt='5 Stars' loading='lazy' decoding='async' />
+    <br />
+    {isShort ? <p>{shortQuote}</p> : <Content />}
+</div>

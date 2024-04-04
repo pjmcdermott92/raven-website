@@ -1,0 +1,68 @@
+@use 'variables' as *;
+@use 'colors' as *;
+
+:root {
+    --base: 20px;
+
+    --breakpoint-xs: #{$breakpoint-xs};
+    --breakpoint-sm: #{$breakpoint-sm};
+    --breakpoint-md: #{$breakpoint-md};
+    --breakpoint-mh: #{$breakpoint-mh};
+    --breakpoint-lg: #{$breakpoint-lg};
+    --breakpoint-xl: #{$breakpoint-xl};
+    --breakpoint-xxl: #{$breakpoint-xxl};
+
+    --scrollbar-width: 17px;
+
+    --header-height: 90px;
+    --padding-page-top: calc(var(--header-height) + var(--base) * 2);
+
+    --font-body: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans',
+        sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+    --fs-small: clamp(13px, calc(0.8125rem + ((1vw - 7.68px) * 0.1736)), 15px);
+    --fs-regular: clamp(16px, calc(1rem + ((1vw - 7.68px) * 0.1736)), 18px);
+    --fs-extra-regular: clamp(20px, calc(1.25rem + ((1vw - 7.68px) * 0.1736)), 22px);
+    --fs-medium: clamp(24px, calc(1.5rem + ((1vw - 7.68px) * 0.2604)), 27px);
+    --fs-extra-medium: clamp(30px, calc(1.875rem + ((1vw - 7.68px) * 0.1736)), 32px);
+    --fs-large: clamp(38px, calc(2.375rem + ((1vw - 7.68px) * 0.3472)), 42px);
+    --fs-larger: clamp(48px, calc(3rem + ((1vw - 7.68px) * 0.5208)), 54px);
+    --fs-huge: clamp(58px, calc(3.625rem + ((1vw - 7.68px) * 0.3472)), 62px);
+    --fs-large-huge: clamp(68px, calc(4.25rem + ((1vw - 7.68px) * 0.3472)), 72px);
+
+    --h-gutter: var(--base);
+}
+
+// Global styles
+
+// Resets
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    text-size-adjust: 100%;
+    font: {
+        family: var(--font-body);
+        size: var(--fs-regular);
+    }
+    color: var(--color-base);
+    margin: 0;
+}
+
+::selection {
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}

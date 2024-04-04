@@ -1,0 +1,16 @@
+---
+import classNames from '../utils/classNames';
+
+export interface Props {
+    isLight?: boolean;
+    isDark?: boolean;
+    className?: string;
+    id?: string;
+}
+
+const { isLight, isDark, className, id } = Astro.props;
+---
+
+<section id={id || ''} class={classNames('section', isDark && 'section__bg-base', isLight && 'section__bg-gray', className)}>
+    <slot />
+</section>

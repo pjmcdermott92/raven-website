@@ -1,0 +1,27 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import PageFooter from '../components/PageFooter.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../config.ts';
+
+export interface Props {
+    title?: string;
+    description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang='en'>
+    <head>
+        <BaseHead title={title || SITE_TITLE} description={description || SITE_DESCRIPTION} />
+    </head>
+    <body>
+        <PageHeader />
+        <main>
+            <slot />
+        </main>
+        <PageFooter />
+    </body>
+</html>

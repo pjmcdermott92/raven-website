@@ -1,0 +1,20 @@
+---
+import { Image } from 'astro:assets';
+
+export interface Props {
+    service: any;
+    lazy?: boolean;
+}
+
+const { service, lazy = false } = Astro.props;
+const { icon, serviceName } = service.data;
+const { Content } = await service.render();
+---
+
+<div class='services-grid__grid-item'>
+    <Image src={icon} alt='service' width='51' height='57' decoding='async' loading={lazy ? 'lazy' : 'eager'} />
+    <div class='services-grid__content'>
+        <h3 class='fs-medium'>{serviceName}</h3>
+        <Content />
+    </div>
+</div>

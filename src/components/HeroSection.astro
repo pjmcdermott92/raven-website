@@ -1,0 +1,25 @@
+---
+import { Image } from 'astro:assets';
+
+export interface Props {
+    bgImage: any;
+    bgImgageAlt: string;
+    mainHeading?: string;
+    subHeading?: string;
+}
+
+const { bgImage, bgImgageAlt, mainHeading, subHeading } = Astro.props;
+---
+
+<section class='hero-section'>
+    <span class='hero-section__overlay'></span>
+    <Image fetchpriority='high' decoding='async' loading='eager' src={bgImage} alt={bgImgageAlt} class='hero-section__hero-img' />
+    <div class='container'>
+        <div class='hero-section__content'>
+            <h1 class='main-heading'>{mainHeading}</h1>
+            <p>{subHeading}</p>
+            <br />
+            <slot />
+        </div>
+    </div>
+</section>

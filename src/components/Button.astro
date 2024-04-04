@@ -1,0 +1,53 @@
+---
+import classNames from '../utils/classNames';
+
+export interface Props {
+    text?: string;
+    handler?: any;
+    isLink?: boolean;
+    newTab?: boolean;
+    href?: string;
+    variant?: BUTTON_VARIANTS;
+    isOutline?: boolean;
+}
+
+export enum BUTTON_VARIANTS {
+    PRIMARY = 'primary',
+    SECONDARY = 'secondary',
+    LIGHT = 'light',
+}
+
+const { text, handler, isLink = false, newTab = false, href = '/', variant = BUTTON_VARIANTS.PRIMARY, isOutline = false } = Astro.props;
+
+const variantClasses = {
+    primary: isOutline ? 'btn-outline-primary' : 'btn-primary',
+    secondary: isOutline ? 'btn-outline-secondary' : 'btn-secondary',
+    light: isOutline ? 'btn-outline-light' : 'btn-light',
+};
+---
+
+{
+    !isLink && (
+        <button class={classNames('btn', variantClasses[variant])} onclick={handler}>
+            {text && text}
+            <slot />
+        </button>
+    )
+}
+
+{
+    isLink && newTab && (
+        <a href={href} target='_blank' rel='noreferrer noopener' class={classNames('btn', variantClasses[variant])}>
+            {text && text}
+            <slot />
+        </a>
+    )
+}
+{
+    isLink && !newTab && (
+        <a href={href} class={classNames('btn', variantClasses[variant])}>
+            {text && text}
+            <slot />
+        </a>
+    )
+}

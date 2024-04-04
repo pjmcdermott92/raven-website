@@ -1,0 +1,56 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import Button, { BUTTON_VARIANTS } from '../components/Button.astro';
+import heroBgImage from '../images/home-hero.webp';
+import ServicesGrid from '../components/ServicesGrid.astro';
+import FamilyOwnedSection from '../components/FamilyOwnedSection.astro';
+import Testimonials from '../components/Testimonials.astro';
+import CtaSection from '../components/CtaSection.astro';
+import Section from '../components/Section.astro';
+
+import mattTruckImage from '../images/matt-truck.webp';
+---
+
+<BaseLayout>
+    <HeroSection
+        bgImage={heroBgImage}
+        bgImgageAlt='Tucson, Arizona area HVAC repair'
+        mainHeading='Helping You Keep Your Cool (and Heat)!'
+        subHeading='Raven Heating & Cooling is committed to making sure that you are comfortable in your Tucson, AZ area home - no matter what the temperature is outside!'>
+        <Button variant={BUTTON_VARIANTS.SECONDARY} isLink href='/contact' text='Request Service' />
+    </HeroSection>
+    <Section id='services' isDark>
+        <div class='container'>
+            <h2 class='text-center fs-larger'>Our Services</h2>
+            <ServicesGrid lazy />
+        </div>
+    </Section>
+    <FamilyOwnedSection />
+    <Section isLight>
+        <div class='columns'>
+            <div class='one-half'>
+                <h2 class='fs-extra-medium'>Your Tucson, AZ HVAC Expert</h2>
+                <h3 class='expert-accent'>Since 2010</h3>
+                <p>
+                    Raven Heating & Cooling has been providing
+                    <strong>HVAC repair and maintenance</strong>
+                    solutions right here in Tucson, Arizona since 2010. The owner, Matthew Uselton, has been working in the HVAC repair industry
+                    for more than 20 years. With that kind of commitment, you can trust that we have your concerns - and your budget - in mind.
+                </p>
+                <p>
+                    Reach out to <strong>Raven Heating & Cooling</strong> for all of your heating and cooling needs, and we promise that you
+                    will have a wonderful experience!
+                </p>
+            </div>
+            <div class='one-half'>
+                <div class='image-offset'>
+                    <Image src={mattTruckImage} decoding='async' loading='eager' alt='Matthew Uselton has been providing HVAC services since 2000' />
+                </div>
+            </div>
+        </div>
+    </Section>
+    <CtaSection />
+	<Testimonials />
+</BaseLayout>

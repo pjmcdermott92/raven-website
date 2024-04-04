@@ -1,0 +1,69 @@
+---
+import { Image } from 'astro:assets';
+import { NAV_LINKS } from '../config';
+import logo from '../images/logo.webp';
+---
+
+<header class='page-header'>
+    <div class='page-header__container'>
+        <a href='/' class='site-brand'>
+            <Image
+                src={logo}
+                alt='Raven Heating & Cooling'
+                width={278}
+                height={91}
+                class='page-header__logo'
+                fetchpriority='high'
+                loading='eager'
+            />
+        </a>
+        <div class='page-header__right-content'>
+            <p class='page-header__phone'><a href='tel:5202448627'>(520) 244-8627</a></p>
+            <nav class='page-header__site-nav'>
+                <button
+                    class='mobile-menu-toggle'
+                    aria-controls='primary-menu'
+                    aria-expanded='false'
+                    aria-label='mobile menu toggle'
+                    data-toggle-btn>
+                    <span class='visually-hidden'>Menu</span>
+                    <span aria-hidden='true'>&#9776;</span>
+                </button>
+                <div class='page-header__site-nav--menu-container' data-menu-container data-expanded='false'>
+                    <button id='close' class='close-button' data-menu-close-btn>&times; Close</button>
+                    <ul>
+                        {
+                            NAV_LINKS.map(({ href, label }) => (
+                                <li>
+                                    <a href={href}>{label}</a>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+<script defer>
+    const mobileToggleBtn = document.querySelector('[data-toggle-btn]');
+    const mobileMenuContainer = document.querySelector('[data-menu-container]');
+    const mobileMenuCloseBtn = document.querySelector('[data-menu-close-btn]');
+
+    mobileToggleBtn.addEventListener('click', () => {
+        mobileToggleBtn.setAttribute('aria-expanded', true);
+        mobileMenuContainer.dataset.expanded = true;
+    });
+
+    const handleClose = () => {
+        mobileMenuContainer.classList.add('closing');
+
+        setTimeout(() => {
+            mobileMenuContainer.classList.remove('closing');
+            mobileToggleBtn.setAttribute('aria-expanded', false);
+            mobileMenuContainer.dataset.expanded = false;
+        }, 350);
+    };
+
+    mobileMenuCloseBtn.addEventListener('click', handleClose);
+</script>

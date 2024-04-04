@@ -1,0 +1,25 @@
+---
+import { Image } from 'astro:assets';
+import Section from './Section.astro';
+import Button, { BUTTON_VARIANTS } from './Button.astro';
+import mattImage from '../images/matt.webp';
+---
+
+<Section>
+    <div class='columns'>
+        <div class='one-third'>
+            <Image src={mattImage} alt='Matthew Uselton' width={411} height={369} decoding='async' loading='lazy' />
+        </div>
+        <div class='two-thirds'>
+            <h2 class='fs-large'>Local, Family-Owned and Operated</h2>
+            <p>
+                Raven Heating & Cooling is a family-owned and operated business. Since we are a family-owned business, we believe in
+                treating our customers like family, too! We have set a standard on professionalism, quality workmanship, and customer
+                satisfaction.
+            </p>
+            <p>We are here to help you with all of your heating and air conditioning needs in Tucson, Arizona and the surrounding area.</p>
+            <br />
+            <Button variant={BUTTON_VARIANTS.SECONDARY} isLink href='/contact' text='Request Service' />
+        </div>
+    </div>
+</Section>

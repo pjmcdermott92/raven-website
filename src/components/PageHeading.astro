@@ -1,0 +1,25 @@
+---
+import { Image } from 'astro:assets';
+import headingImage from '../images/tucson-rio-rico.webp';
+
+export interface Props {
+    heading: string;
+    subHeading?: string;
+    image?: any;
+    alt?: string;
+}
+
+const { heading, subHeading, image = headingImage, alt = heading } = Astro.props;
+---
+
+<section class='page-heading-section'>
+    <span class='page-heading-section__overlay'></span>
+    <Image fetchpriority='high' decoding='async' loading='eager' src={image} alt={alt} class='page-heading-section__hero-img' />
+    <div class='container'>
+        <div class='page-heading-section__content'>
+            <h1 class='main-heading'>{heading}</h1>
+            {subHeading && <p>{subHeading}</p>}
+            <slot />
+        </div>
+    </div>
+</section>

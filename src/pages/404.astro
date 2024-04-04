@@ -1,0 +1,14 @@
+---
+import PageHeading from '../components/PageHeading.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button, { BUTTON_VARIANTS } from '../components/Button.astro';
+---
+
+<BaseLayout>
+    <PageHeading
+        heading='Page Not Found!'
+        subHeading='The page that you were looking for could not be found. Please double-check the URL and try again.'>
+        <br />
+        <Button isLink href='/' isOutline variant={BUTTON_VARIANTS.LIGHT} text='Back to Home' />
+    </PageHeading>
+</BaseLayout>

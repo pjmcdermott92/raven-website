@@ -1,0 +1,18 @@
+---
+import Button, { BUTTON_VARIANTS } from './Button.astro';
+---
+
+<section class='cta-section'>
+    <div class='container columns'>
+        <div class='two-thirds'>
+            <h4 class='fs-extra-medium'>Contact us TODAY!</h4>
+            <p class='fs-regular'>
+                Don’t wait! Contact us today to get your HVAC back to performing at its best! Schedule your HVAC maintenance, repair, or
+                replacement now.
+            </p>
+        </div>
+        <div class='one-third'>
+            <Button variant={BUTTON_VARIANTS.LIGHT} isLink href='/contact' text='Contact Us' />
+        </div>
+    </div>
+</section>
