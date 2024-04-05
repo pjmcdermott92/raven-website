@@ -1,12 +1,21 @@
+@use '../base/variables' as *;
+@use '../base/utils' as *;
+@use '../base/queries' as *;
+
 .full-width-split {
     display: flex;
+
+    @include breakpoint-sm {
+        flex-direction: column;
+    }
 
     &__left {
         flex: 1;
         padding: 4rem 1rem;
 
         &--inner {
-            width: 600px;
+            width: 100%;
+            max-width: 600px;
             margin-left: auto;
         }
     }
@@ -17,7 +26,8 @@
         padding: 4rem 1rem 4rem 2rem;
 
         &--inner {
-            width: 600px;
+            width: 100%;
+            max-width: 600px;
         }
     }
 }
