@@ -1,0 +1,59 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeading from '../components/PageHeading.astro';
+import Button, { BUTTON_VARIANTS } from '../components/Button.astro';
+import phoneIcon from '../images/phone.webp';
+import emailIcon from '../images/email.webp';
+---
+
+<BaseLayout title='Contact Raven Heating & Cooling'>
+    <PageHeading heading='Get In Touch' />
+
+    <div class='full-width-split'>
+        <div class='full-width-split__left'>
+            <div class='full-width-split__left--inner'>
+                <p class='fs-medium'>
+                    Reach out to us today to schedule a service, get your system repaired, or get an estimate on a new system.
+                </p>
+                <br />
+                <p class='contact-detail'>
+                    <Image src={phoneIcon} alt='Telephone' width={35} height={35} decoding='async' loading='eager' />
+                    <a href='tel:5202448627'>(520) 244-8627</a>
+                </p>
+                <p class='contact-detail'>
+                    <Image src={emailIcon} alt='Email' width={35} height={35} decoding='async' loading='eager' />
+                    <a href='mailton:comfort@ravenac.com'>comfort@ravenac.com</a>
+                </p>
+            </div>
+        </div>
+        <div class='full-width-split__right'>
+            <div class='full-width-split__right--inner'>
+                <h3 class='fs-medium'>Send a Message</h3>
+                <form class='contact-form'>
+                    <div class='form-group'>
+                        <input type='text' name='first_name' id='first_name' />
+                        <label for='first_name'>First Name</label>
+                    </div>
+                    <div class='form-group'>
+                        <input type='text' name='last_name' id='last_name' />
+                        <label for='last_name'>Last Name</label>
+                    </div>
+                    <div class='form-group'>
+                        <input type='email' name='email' id='email' />
+                        <label for='email'>Email Address</label>
+                    </div>
+                    <div class='form-group'>
+                        <input type='tel' name='phone' id='phone' placeholder='xxx-xxx-xxxx' />
+                        <label for='email'>Phone</label>
+                    </div>
+                    <div class='form-group'>
+                        <textarea name='message' id='message' rows='4'></textarea>
+                        <label for='message'>Message</label>
+                    </div>
+                    <Button variant={BUTTON_VARIANTS.SECONDARY} text='Submit' />
+                </form>
+            </div>
+        </div>
+    </div>
+</BaseLayout>

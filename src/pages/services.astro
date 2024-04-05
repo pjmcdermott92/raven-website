@@ -3,11 +3,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHeading from '../components/PageHeading.astro';
 import Section from '../components/Section.astro';
 import ServicesGrid from '../components/ServicesGrid.astro';
+import Button, { BUTTON_VARIANTS } from '../components/Button.astro';
 import Testimonials from '../components/Testimonials.astro';
 import CtaSection from '../components/CtaSection.astro';
 ---
 
-<BaseLayout>
+<BaseLayout title='Our Services | Raven Heating & Cooling'>
     <PageHeading heading='Our Services' />
     <Section>
         <div class='container'>
@@ -16,6 +17,10 @@ import CtaSection from '../components/CtaSection.astro';
                 and cooling needs.
             </p>
             <ServicesGrid />
+            <br />
+            <div class='text-center'>
+                <Button isLink isOutline variant={BUTTON_VARIANTS.DARK} href='/contact' text='Request Service Today' />
+            </div>
         </div>
     </Section>
     <CtaSection />

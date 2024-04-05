@@ -1,7 +1,7 @@
 .btn {
     background: var(--color-gray);
     color: var(--color-base);
-    margin: .5rem 0;
+    margin: 0.5rem 0;
     padding: 0.75rem 1.5rem;
     font: {
         size: var(--fs-regular);
@@ -57,5 +57,31 @@
         background-color: transparent;
         border-color: var(--color-gray);
         color: var(--color-gray);
+    }
+}
+
+.btn-outline-dark {
+    background-color: transparent;
+    border: 2px solid var(--color-base);
+    color: var(--color-base);
+    box-shadow: none;
+
+    &:hover {
+        opacity: 1;
+        background-color: var(--color-base);
+        color: var(--color-white);
+    }
+}
+
+.btn-dark {
+    background-color: var(--color-base);
+    color: var(--color-white);
+    box-shadow: none;
+
+    &:hover {
+        opacity: 1;
+        background-color: transparent;
+        border-color: var(--color-base);
+        color: var(--color-base);
     }
 }

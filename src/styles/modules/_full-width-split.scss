@@ -1,0 +1,23 @@
+.full-width-split {
+    display: flex;
+
+    &__left {
+        flex: 1;
+        padding: 4rem 1rem;
+
+        &--inner {
+            width: 600px;
+            margin-left: auto;
+        }
+    }
+
+    &__right {
+        flex: 1;
+        background-color: var(--color-gray);
+        padding: 4rem 1rem 4rem 2rem;
+
+        &--inner {
+            width: 600px;
+        }
+    }
+}

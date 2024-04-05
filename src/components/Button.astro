@@ -15,6 +15,7 @@ export enum BUTTON_VARIANTS {
     PRIMARY = 'primary',
     SECONDARY = 'secondary',
     LIGHT = 'light',
+    DARK = 'dark'
 }
 
 const { text, handler, isLink = false, newTab = false, href = '/', variant = BUTTON_VARIANTS.PRIMARY, isOutline = false } = Astro.props;
@@ -23,6 +24,7 @@ const variantClasses = {
     primary: isOutline ? 'btn-outline-primary' : 'btn-primary',
     secondary: isOutline ? 'btn-outline-secondary' : 'btn-secondary',
     light: isOutline ? 'btn-outline-light' : 'btn-light',
+    dark: isOutline ? 'btn-outline-dark' : 'btn-dark',
 };
 ---
 
