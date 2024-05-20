@@ -27,6 +27,11 @@ textarea {
     }
 }
 
+input:disabled,
+textarea:disabled {
+    opacity: 0.55;
+}
+
 input:focus + label,
 input.populated + label,
 textarea:focus + label,
@@ -34,6 +39,15 @@ textarea.populated + label {
     font-size: 0.75rem;
     top: 0;
     transition: 250ms ease-in-out;
+}
+
+.honey {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
 label {
@@ -59,4 +73,27 @@ label {
             color: var(--color-base);
         }
     }
+}
+
+.message {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid;
+}
+
+.message.success {
+    background-color: #8ae08a;
+    color: var(--color-success);
+    border-color: var(--color-success);
+}
+
+.message.error {
+    background-color: #ebb7b7;
+    color: var(--color-brand-primary);
+    border-color: var(--color-brand-primary);
+}
+
+.field-error-text {
+    color: var(--color-brand-primary);
+    font-size: .85rem;
 }
